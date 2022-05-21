@@ -1,11 +1,25 @@
 body {
     text-align: center;
+    margin: 0;
+}
+
+#h1 {
+    background: linear-gradient(359.3deg, rgb(196, 214, 252) 1%, rgba(187, 187, 187, 0) 70.9%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.123);
 }
 
 h1 {
-    font-family: Monoton;
-    font-size: 70px;
+    font-family: 'Bungee Outline', cursive; font-size: 50px;
     margin: 0.2em;
+}
+
+#main-border {
+    border: 6px double black;
+    border-radius: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
 }
 
 h2 {
