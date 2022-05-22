@@ -1,10 +1,32 @@
-// Select color input
-// Select size input
+const sizePicker = document.querySelector('#size-picker');
+const table = document.querySelector('#pixel-canvas');
 
-// When size is submitted by the user, call makeGrid()
+// Default size:
+makeGrid(10, 10);
 
-function makeGrid() {
+// Submit size:
+sizePicker.addEventListener('submit', function (event) {
+    event.preventDefault();
+    while (table.hasChildNodes()) {
+        table.removeChild(table.firstChild);
+    }
+    const height = document.querySelector('#input-height');
+    const width = document.querySelector('#input-width');
+    makeGrid(height.value, width.value);
+});
 
-// Your code goes here!
-
+// When size is submitted by the user, call makeGrid():
+function makeGrid(height, width) {
+    for (let y = 0; y < height; y++) {
+        let row = table.insertRow(y);
+        for (var x = 0; x < width; x++) {
+            let cell = row.insertCell(x);
+            cell.style.backgroundColor = "white";
+            cell.addEventListener('click', function (event) {
+                event.preventDefault();
+                const color = document.querySelector('#color-picker');
+                cell.style.backgroundColor = color.value;
+            });
+        }
+    }
 }
