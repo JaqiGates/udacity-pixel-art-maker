@@ -7,9 +7,11 @@ makeGrid(10, 10);
 // Submit size:
 sizePicker.addEventListener('submit', function (event) {
     event.preventDefault();
+    // Clear table first:
     while (table.hasChildNodes()) {
         table.removeChild(table.firstChild);
     }
+    // Apply user's size:
     const height = document.querySelector('#input-height');
     const width = document.querySelector('#input-width');
     makeGrid(height.value, width.value);
@@ -21,6 +23,7 @@ function makeGrid(height, width) {
         let row = table.insertRow(y);
         for (var x = 0; x < width; x++) {
             let cell = row.insertCell(x);
+            // Set cell colors:
             cell.style.backgroundColor = "white";
             cell.addEventListener('click', function (event) {
                 event.preventDefault();
